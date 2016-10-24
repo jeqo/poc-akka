@@ -12,7 +12,13 @@ import java.util.concurrent.TimeUnit;
  */
 public class ProjectInbox {
 
-
+    /**
+     * When writing code outside of actors which shall communicate with actors, the ask pattern can be a solution
+     * (see below), but there are two things it cannot do: receiving multiple replies (e.g. by subscribing an
+     * ActorRef to a notification service) and watching other actors’ lifecycle. For these purposes there is the
+     * Inbox class
+     * @param args
+     */
     public static void main(String... args){
         final ActorSystem system = ActorSystem.create("MySystem");
         final Inbox inbox = Inbox.create(system);
