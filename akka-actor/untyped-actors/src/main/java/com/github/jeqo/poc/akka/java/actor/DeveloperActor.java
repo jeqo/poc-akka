@@ -14,12 +14,20 @@ import akka.japi.Creator;
 public class DeveloperActor extends UntypedActor {
 
     private final LoggingAdapter log = Logging.getLogger(getContext().system(), this);
+
     private final int velocity;
 
     DeveloperActor(int velocity) {
         this.velocity = velocity;
     }
 
+    /**
+     * It is a good idea to provide static factory methods on the UntypedActor which help keeping the creation
+     * of suitable Props as close to the actor definition as possible
+     *
+     * @param velocity
+     * @return
+     */
     public static Props props(final int velocity) {
         return Props.create(new Creator<DeveloperActor>() {
             public DeveloperActor create() throws Exception {
@@ -28,6 +36,10 @@ public class DeveloperActor extends UntypedActor {
         });
     }
 
+    /**
+     * Another good practice is to declare what messages an Actor can receive as close to the actor definition as
+     * possible (e.g. as static classes inside the Actor or using other suitable class)
+     */
     public static class TaskMessage {
         private final String project;
         private final String taskName;
@@ -50,7 +62,6 @@ public class DeveloperActor extends UntypedActor {
         if (message instanceof TaskMessage) {
             final TaskMessage taskMessage = (TaskMessage) message;
             log.info("Received Task message {}=>{}", taskMessage.getProject(), taskMessage.getTaskName());
-            getSender().tell(message, getSelf());
         } else unhandled(message);
     }
 
