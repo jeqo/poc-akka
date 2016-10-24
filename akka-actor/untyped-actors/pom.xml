@@ -10,7 +10,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>hello-world</artifactId>
+    <artifactId>untyped-actors</artifactId>
 
     <build>
         <plugins>
@@ -19,11 +19,12 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.github.jeqo.poc.akka.java.actor.Main</mainClass>
+                            <mainClass>com.github.jeqo.poc.akka.actor.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
 </project>

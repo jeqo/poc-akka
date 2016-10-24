@@ -23,12 +23,15 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="hello-world" />
+        <module name="untyped-actors" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="akka-actor" target="1.5" />
+      <module name="akka-streams" target="1.5" />
       <module name="hello-world" target="1.5" />
       <module name="poc-akka" target="1.5" />
+      <module name="untyped-actors" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

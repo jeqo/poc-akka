@@ -1,4 +1,4 @@
-package com.github.jeqo.poc.akka.actor;
+package com.github.jeqo.poc.akka.java.actor;
 
 import akka.actor.UntypedActor;
 
