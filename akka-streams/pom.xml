@@ -5,6 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
   <modules>
     <module>akka-streams-opencensus</module>
+    <module>akka-streams-flow-monitor</module>
+    <module>akka-streams-kafka-schema-registry</module>
   </modules>
 
   <parent>
